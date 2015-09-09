@@ -1,0 +1,28 @@
+<div id="contentBigTop"><div class="HeadText"><a href="">FOTOS</a></div></div>
+<div id="contentBig">
+    <div class="contenText">
+            {EXPLODE}
+            <div class="picWidth" style="width: {width}%;">
+                <a href="include/images/usergallery/img_{id}.{endung}" target="_blank" ><img src="include/images/usergallery/img_thumb_{id}.{endung}" width="120" height="120" alt="{name}" title="{name}" border="0" /></a>
+                <br />
+                {besch}
+            </div>
+            {EXPLODE}
+            <br clear="all">
+        <center>{MPL}</center>
+    </div>
+</div>
+
+{EXPLODE}
+
+<div id="contentBigTop"><div class="HeadText"><a href="">FOTO HOCHLADEN</a></div></div>
+<form action="index.php?user-fotos-{uid}" method="POST" enctype="multipart/form-data">
+    <div id="contentBig">
+        <div class="contenText">
+            <input type="hidden" name="gesendet" value="yes" />
+            <input type="file" size="60" name="file" style="width: 380px;" class="picInput" />
+            <input size="60" name="text" maxlength="100" class="picInput" style="width: 380px; margin-top: 5px;" /> 
+        </div>
+        <div id="contentBigBottom"><input type="submit" class="uploadSubmit" value="Hochladen" /></div>
+    </div>  
+</form>

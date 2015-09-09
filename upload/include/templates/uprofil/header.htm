@@ -1,0 +1,78 @@
+<div id="uProfilHeader">
+    <div class="titelbild" style="{TITELBILD}">
+        <div class="UName"><a href="?user-details-{UID}">{NAME}</a></div>
+        {FRIENDADDBUTTON}
+        {PNBUTTON}
+        {MOREBUTTON}
+        <div style="display: none;" id="BMoreText" class="BHMore_box">
+            <a href="javascript:blockCheck({UID})">Blockieren</a><br />
+        </div>
+        
+    </div>
+    <div class="profilbild">{AVATA}</div>
+    <div id="navi">
+        <div class="button pinnwand" onclick="location.href = '?user-details-{UID}';">
+            <div class="buttonText">Pinnwand</div>
+        </div>
+        <div class="button info" onclick="location.href = '?user-info-{UID}';">
+            <div class="buttonText">Info</div>
+        </div>
+        {sFotos}
+        {sFriends}
+        {sOpstions}
+        <div style="display: none;" id="mOptionsText" class="nMOptions_box">
+            <a href="?user-privatsphaere-{UID}">Privatsphäre</a><br />
+            <a href="?user-blockierung-{UID}">Blockierungen</a><br />
+            <a href="?user-3">Abmelden</a><br />
+        </div>
+        
+        {sFriendschek}
+
+        <div class="ProfilbildDeko"></div>
+    </div>
+</div>
+
+<script language="JavaScript" type="text/javascript">
+    // Lösch Abfrage
+    function blockCheck(UID) {
+        var frage = confirm("Willst du diese Person wirklich blockieren?");
+        if (frage == true) {
+            document.location.href = "?user-allgcheck-block-" + UID;
+        }
+    }
+    
+    // div klappbox
+    $(".BHMore").click(function() {
+        if ($('#BMoreText').is(":visible")) {
+            $('#BMoreText').hide();
+        } else {
+            $('#BMoreText').show();
+        }
+    });
+
+    $(document).mouseup(function(e) {
+        var container = $(".BHMore");
+        if (!container.is(e.target)
+                && container.has(e.target).length === 0)
+        {
+            $('#BMoreText').hide();
+        }
+    });
+    
+    $("#mOptions").click(function() {
+        if ($('#mOptionsText').is(":visible")) {
+            $('#mOptionsText').hide();
+        } else {
+            $('#mOptionsText').show();
+        }
+    });
+
+    $(document).mouseup(function(e) {
+        var container = $("#mOptions");
+        if (!container.is(e.target)
+                && container.has(e.target).length === 0)
+        {
+            $('#mOptionsText').hide();
+        }
+    });
+</script> 

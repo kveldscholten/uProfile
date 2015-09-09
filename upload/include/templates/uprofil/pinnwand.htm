@@ -1,0 +1,148 @@
+<form action="?user-gbcheck-add-{UID}" method="POST" name="form">
+    <div id="cStatus-Top"><div class="HeadText">PINNWAND</div></div>
+    <div id="cStatus-Index">
+        <div class="ContentText">
+            <textarea class="cStatus-textarea" name="txt" title="{TEXTAREASTATUS}" placeholder="{TEXTAREASTATUS}"></textarea>
+        </div>
+    </div> 
+    <div id="cStatus-Bottom" style="display: none;">
+        <div class="PWSmilies"><img src="include/images/userprofil/icons/icon_smilies.png" style="cursor: pointer;"></div>
+        <div class="PWTformat"><img src="include/images/userprofil/icons/icon_format.png" style="cursor: pointer;"></div>
+        <button value="1" class="cStatus-submit" type="submit">Schreiben</button>
+        <div style="display: none;" id="PWSmilies" class="PWSmilies_box">
+            {SMILIES}
+        </div>
+
+        <div style="display: none;" id="PWTformat" class="PWTformat_box">
+            <div class="PWbbCode">
+                <!-- BB Code START -->
+                <a href="javascript:simple('b')"><img src="include/images/userprofil/icons/icon_bold.png" alt="b" title="{_lang_bold}" border="0"></a>
+                <a href="javascript:simple('i')"><img src="include/images/userprofil/icons/icon_italic.png" alt="i" title="{_lang_italic}" border="0"></a>
+                <a href="javascript:simple('u')"><img src="include/images/userprofil/icons/icon_underline.png" alt="u" title="{_lang_underlined}" border="0"></a>
+                <a href="javascript:simple('url')"><img src="include/images/userprofil/icons/icon_link.png" alt="Url" title="{_lang_link}" border="0"></a>
+                <!-- BB Code ENDE -->
+            </div>
+        </div>
+        <div class="PWPicture"><a href="javascript:usergalleryupl();"><img src="include/images/userprofil/icons/icon_picture.png"></a></div>
+    </div>
+
+</form>
+{EXPLODE}  
+<div id="cPinnwand-Index">
+    <div style="padding: 5px;" class="DelActive">
+        <div class="PinnwandBild">{SAVATAR}</div> 
+        <div class="PinnwandInfo">
+            <a href="?user-details-{SID}">{ERSTELLER}</a><br />
+            <div class="datetime"><img src="include/images/userprofil/icons/icon_clock.png" style="vertical-align: middle;"> {DATETIME}</div>
+        </div> 
+        {DEL}
+        <br clear="all">
+        <div class="PinnwandText">{EINTRAG}</div>
+    </div>
+    <!--AB HIER KOMMENTARE-->
+    <div class="KomsScope">
+        {VISITALL}
+
+        <div style="padding: 5px;">
+            <div id="komAll{ID}" style="display: none;">{KOMALL}</div>
+            {KOM}
+            <div class="KomsBild">{KOMAVATAR}</div>
+            <div class="KomsAdd">
+                <form action="?user-gbcheck-addk-{UID}-{ID}" method="POST">
+                    <textarea onkeydown="if (event.keyCode == 13) {
+                                this.form.submit();
+                                return false;
+                            }" name="ktxt" placeholder="Hinterlasse ein Kommentar ..."></textarea>
+                </form>
+            </div>
+        </div>
+        <br clear="all">
+    </div>
+    <!--KOMMENTARE ENDE-->
+</div> 
+{EXPLODE}  
+<div align="center">{SITELINK}</div>
+
+<script language="JavaScript" type="text/javascript">
+    // Textarea AutoResize
+    $('textarea').on('keyup', function() {
+        $(this).css('height', 'auto');
+        $(this).height(this.scrollHeight);
+    });
+
+
+    // Textarea Show Bottom
+    $('.cStatus-textarea').focus(function() {
+        $('#cStatus-Bottom').show();
+    });
+
+
+    // GB Kommentar klappbox
+    function toggle_visibility(id) {
+        var e = document.getElementById(id);
+        if (e.style.display == 'block')
+            e.style.display = 'none';
+        else
+            e.style.display = 'block';
+    }
+
+
+    // div Smilies klappbox
+    $(".PWSmilies").click(function() {
+        if ($('#PWSmilies').is(":visible")) {
+            $('#PWSmilies').hide();
+        } else {
+            $('#PWSmilies').show();
+        }
+    });
+
+    $(document).mouseup(function(e) {
+        var container = $(".PWSmilies");
+        if (!container.is(e.target)
+                && container.has(e.target).length === 0)
+        {
+            $('#PWSmilies').hide();
+        }
+    });
+
+
+    // div bbcode klappbox
+    $(".PWTformat").click(function() {
+        if ($('#PWTformat').is(":visible")) {
+            $('#PWTformat').hide();
+        } else {
+            $('#PWTformat').show();
+        }
+    });
+
+    $(document).mouseup(function(e) {
+        var container = $(".PWTformat");
+        if (!container.is(e.target)
+                && container.has(e.target).length === 0)
+        {
+            $('#PWTformat').hide();
+        }
+    });
+
+
+    // Lösch Abfrage
+    function delPWcheck(UID, DELID) {
+        var frage = confirm("Willst du diesen Eintrag wirklich löschen?");
+        if (frage == true) {
+            document.location.href = "?user-gbcheck-del-" + UID + "-" + DELID;
+        }
+    }
+    function delPWKcheck(UID, DELID) {
+        var frage = confirm("Willst du diesen Eintrag wirklich löschen?");
+        if (frage == true) {
+            document.location.href = "?user-gbcheck-delk-" + UID + "-" + DELID;
+        }
+    }
+
+
+    // Lädt vorm Posten ein Bild in die Usergallery
+    function usergalleryupl() {
+        var Fenster = window.open('index.php?user-usergallery_upload', 'usergalleryupl', 'status=yes,scrollbars=no,height=250,width=450');
+        Fenster.focus();
+    }
+</script>

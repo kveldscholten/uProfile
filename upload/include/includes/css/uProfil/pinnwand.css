@@ -1,0 +1,342 @@
+/* Status Box */
+#cStatus-Top {
+    height: 36px;
+    width: 402px;
+    background-image: linear-gradient(to bottom, #FFFFFF 0px, #E4E4E4 100%);
+    position: relative;
+    border: 1px solid #D0D1D5;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#cStatus-Index {
+    width: 402px;
+    position: relative;
+    border-left: 1px solid #D0D1D5;
+    border-right: 1px solid #D0D1D5;
+    border-bottom: 1px solid #D0D1D5;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 11px;
+}
+
+#cStatus-Bottom {
+    height: 27px;
+    width: 402px;
+    background-color: #F6F7F8;
+    position: relative;
+    margin-top: -15px;
+    margin-bottom: 11px;
+    border: 1px solid #D0D1D5;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.cStatus-textarea {
+    color: #6a7480;
+    width: 99%;
+    height: 23px;
+    border: 0;
+    resize: none;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.cStatus-textarea:focus {
+    outline: 0;
+    outline: none;
+}
+
+.cStatus-submit {
+    float: right;
+    position: relative;
+    background-color: #86acd4;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #819baa;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 6px;
+    text-shadow: 0px 1px 0px #6b6b6b;
+    margin-right: 3px;
+    margin-top: 3px;
+}
+.cStatus-submit:hover {
+    background-color:#587ebf;
+}
+
+
+/* Pinnwand */
+#cPinnwand-Index {
+    margin-bottom: 11px;
+    border: 1px solid #D0D1D5;
+    border-radius: 5px;
+}
+
+.PinnwandBild {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #D0D1D5;
+    border-radius: 5px;
+    float: left;
+    position: relative;
+}
+
+.PinnwandInfo {
+    max-width: 250px;
+    height: 45px;
+    position: relative;
+    padding: 5px;
+    left: 10px;
+    float: left;
+}
+
+.PinnwandInfo a {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.PinnwandInfo a:hover {
+    text-decoration: underline;
+}
+
+.datetime {
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #9197a3;
+}
+
+.PinnwandText {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.PinnwandDel {
+    text-align: right;
+    float: right;
+    display: none;
+}
+.DelActive:hover > .PinnwandDel {
+    display: block;
+}
+
+
+/* Pinnwand Kommentare */
+#cKoms-Index {
+    margin-bottom: 6px;
+    margin-top: 5px;
+}
+
+.KomsScope {
+    width: 100%;
+    border-top: 1px solid #e5e5e5; 
+    background-color: #F6F7F8;
+}
+
+.KomsBild {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    float: left;
+    position: relative;
+    margin-bottom: -9px;
+}
+
+.KomsInfo {
+    max-width: 320px;
+    min-height: 45px;
+    position: relative;
+    left: 10px;
+    float: left;
+}
+
+.KomsInfo a {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.KomsInfo a:hover {
+    text-decoration: underline;
+}
+
+.KomsDate {
+    font-size: 10px;
+    font-weight: normal;
+    color: #9197a3;
+}
+
+.KomsText {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.KomsAdd {
+    width: 335px;
+    float: left;
+    min-height: 35px; 
+    padding-left: 10px; 
+    margin-bottom: 5px; 
+    margin-top: 3px;
+}
+
+.KomsAdd textarea {
+    width: 100%;
+    height: 23px;
+    border: 1px solid #D0D1D5;
+    padding-top: 5px;
+    background-color: #fff;
+    overflow: hidden;
+    resize: none;
+}
+
+.allKomss {
+    width: 98%;    
+    cursor:pointer;
+    margin:  6px 11px 0 6px;
+    color: #3b5998;
+}
+.allKomss:hover {
+    text-decoration: underline;
+}
+
+.KomsDel {
+    text-align: right;
+    float: right;
+    display: none;
+}
+#cKoms-Index:hover > .KomsDel {
+    display: block;
+}
+
+
+/* Pinnwand Picture */
+.PWPicture {
+    height: 27px;
+    padding: 4px;
+    float: left;
+}
+
+
+/* Pinnwand Smilies */
+.PWSmilies {
+    height: 27px;
+    padding: 4px;
+    float: left;
+}
+.PWSmilies a {
+    text-decoration: none;
+}
+
+
+/* Smilie klappbox */
+.PWSmilies_box {
+    width: 160px;
+    top: 32px;
+    left: -9px;
+    padding: 6px;
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #D0D1D5;
+    line-height: 20px;
+    z-index: 5;
+
+    -webkit-background-clip: padding-box;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+}
+.PWSmilies_box:after, .PWSmilies_box:before {
+    bottom: 100%;
+    left: 13%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.PWSmilies_box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 6px;
+    margin-left: -6px;
+}
+.PWSmilies_box:before {
+    border-color: rgba(229, 229, 229, 0);
+    border-bottom-color: #e5e5e5;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+.PWSmilies_box a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+.PWSmilies_box a:hover {
+    text-decoration: underline;
+}
+
+
+/* Pinnwand BBcode */
+.PWTformat {
+    height: 27px;
+    padding: 4px;
+    float: left;
+}
+.PWTformat a {
+    text-decoration: none;
+}
+
+
+/* BBcode Klappbox */
+.PWTformat_box {
+    width: 94px;
+    top: 32px;
+    left: 26px;
+    padding-top: 5px;
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #D0D1D5;
+    line-height: 20px;
+    z-index: 5;
+    -webkit-background-clip: padding-box;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+}
+.PWTformat_box:after, .PWTformat_box:before {
+    bottom: 100%;
+    left: 13%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.PWTformat_box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 6px;
+    margin-left: -6px;
+}
+.PWTformat_box:before {
+    border-color: rgba(229, 229, 229, 0);
+    border-bottom-color: #e5e5e5;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+.PWTformat_box a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+.PWTformat_box a:hover {
+    text-decoration: underline;
+}
